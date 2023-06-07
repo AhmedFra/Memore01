@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.black),),
             ),
             Container(
-              margin: EdgeInsets.only(left: 20),
+              margin: EdgeInsets.only(left: 20,top: 10),
               child:
                DatePicker(
                  DateTime.now(),
@@ -231,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GestureDetector(
                     onTap: _showBottomSheet,
                     child: Container(
-                      margin: EdgeInsets.only(top:10,left: 20),
+                      margin: EdgeInsets.only(top:0,left: 20),
                               height: 100,        
                               decoration: BoxDecoration(
                               color: Color.fromARGB(255, 229, 235, 238),

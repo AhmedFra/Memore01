@@ -56,12 +56,12 @@ class _AppointmentPageState extends State<AppointmentPage> {
                 ),
               ),
               Muinput(
-                title: "Name",
+                title: "Your Name",
                 hint: "Enter your title ",
                 controller: _titleController,
               ),
               Muinput(
-                title: "Note",
+                title: "Family member name",
                 hint: "Enter your note ",
                 controller: _noteController,
               ),
@@ -207,49 +207,18 @@ class _AppointmentPageState extends State<AppointmentPage> {
   //   print("My id is " + "$value");
   // }
 _getLocationFromMap() async {
-  bool serviceEnabled;
-  LocationPermission permission;
+    Position? position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
 
-  // Check if location services are enabled
-  serviceEnabled = await Geolocator.isLocationServiceEnabled();
-  if (!serviceEnabled) {
-    // Location services are disabled, handle accordingly
-    print('Location services are disabled');
-    return;
-  }
-
-  // Request location permission
-  permission = await Geolocator.checkPermission();
-  if (permission == LocationPermission.deniedForever) {
-    // Location permission is permanently denied, handle accordingly
-    print('Location permission is permanently denied');
-    return;
-  }
-
-  if (permission == LocationPermission.denied) {
-    // Location permission is denied, request it
-    permission = await Geolocator.requestPermission();
-    if (permission != LocationPermission.whileInUse &&
-        permission != LocationPermission.always) {
-      // Location permission is still denied, handle accordingly
-      print('Location permission is denied');
-      return;
+    if (position != null) {
+      LatLng latLng = LatLng(position.latitude, position.longitude);
+      _openMapWithLocation(latLng);
+    } else {
+      // Handle error when getting user location
+      print('Error getting user location');
     }
   }
-
-  // Location permission is granted, proceed to get user location
-  Position? position = await Geolocator.getCurrentPosition(
-    desiredAccuracy: LocationAccuracy.high,
-  );
-
-  if (position != null) {
-    LatLng latLng = LatLng(position.latitude, position.longitude);
-    _openMapWithLocation(latLng);
-  } else {
-    // Handle error when getting user location
-    print('Error getting user location');
-  }
-}
   _getDateFromUser() async {
     DateTime? _pickerDate = await showDatePicker(
       context: context,

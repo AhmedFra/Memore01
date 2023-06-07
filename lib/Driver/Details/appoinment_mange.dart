@@ -13,8 +13,9 @@ class _ReportPageState extends State<ReportPage> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(height: 20,),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top:20 ),
             child: Row(
               children: [
                 IconButton(
@@ -120,12 +121,10 @@ class _ReportPageState extends State<ReportPage> {
                               ),
                               SizedBox(height: 10,),
                       Expanded(
-                        child: Image.asset(
-                          '123.png',
-                          width: 600,
-                          height: 600,
-                        ),
-                      ),
+                                    child: Image(
+                                      image: AssetImage("assets/123.png"),
+                                      width: 600,
+                                      height: 600,) ),
                       SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
@@ -168,20 +167,16 @@ class _ReportPageState extends State<ReportPage> {
                               child:  Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                     Expanded(
-                                       child: Image.asset(
-                                      '123.png',
-                                        width: 300,
-                                           height: 300,
-                                           ),
-                                          ),
+                                      Expanded(
+                                    child: Image(
+                                      image: AssetImage("assets/123.png"),
+                                      width: 300,
+                                      height: 300,) ),
                                           Expanded(
-                                           child: Image.asset(
-                                             '123.png',
-                                              width: 300,
-                                              height: 300,
-                                               ),
-                                               ),
+                                    child: Image(
+                                      image: AssetImage("assets/123.png"),
+                                      width: 300,
+                                      height: 300,) ),
                                   ],
                                 )
                               

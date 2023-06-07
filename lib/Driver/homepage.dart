@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoire/Patient/home.dart';
 
 import 'details/Upcoming_Appointments.dart';
 import 'details/appoinment_mange.dart';
@@ -16,7 +17,7 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar2(),
+      appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
@@ -29,6 +30,7 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                     child: Container(
+                      height: 200,
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(12),
@@ -36,13 +38,12 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                       padding: EdgeInsets.all(8),
                       child: Row(
                         children: [
-                          Expanded(
-                            child: Image.asset(
-                              'drive_safe.png',
-                              width: 200,
-                              height: 200,
-                            ),
-                          ),
+                           Expanded(
+                      child: Image(image: AssetImage("assets/drive_safe.png"),width: 200,
+                        height: 200,)
+                        
+                        
+                    ),
                           SizedBox(width: 12),
                           Expanded(
                             child: Column(
@@ -139,13 +140,11 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Expanded(
-                                      child: Image.asset(
-                                        'eaamb.png',
-                                        width: 80,
-                                        height: 80,
-                                      ),
-                                    ),
+                                     Expanded(
+                                    child: Image(
+                                      image: AssetImage("assets/eaamb.png"),
+                                      width: 80,
+                                      height: 80,) ),
                                   ],
                                 ),
                               ),
@@ -224,15 +223,17 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
   }
 }
 
-class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => const Size.fromHeight(70);
+  Size get preferredSize => Size.fromHeight(110);
+   CustomAppBar({Key? key});
 
   @override
   Widget build(BuildContext context) {
+  
     return Container(
-      padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
-      height: preferredSize.height,
+      padding:  EdgeInsets.only(top: 50, left: 20, right: 20),
+      height: 110,
       width: double.infinity,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -250,24 +251,21 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
           end: Alignment.bottomCenter,
         ),
       ),
-      child: ListView(
-        shrinkWrap: true,
+      child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Center(
-                child: Text(
-                  'Welcome Driver',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                    fontSize: 24.0,
-                  ),
+              Text(
+                'Welcome Driver',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1,
+                  fontSize: 24.0,
                 ),
               ),
-              IconButton(
+            IconButton(
                 icon: Image.asset(
                   'assets/utilisateur.png',
                   width: 60,
@@ -281,9 +279,16 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
                   );
                 },
               ),
+             
+              
+              // CircleButton(
+              //   icon: Icons.notifications,
+              //   onPressed: () {},
+              // ),
+              SizedBox(width: 35,)
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 0),
         ],
       ),
     );
@@ -361,11 +366,10 @@ class BottomSheetContent extends StatelessWidget {
                 Stack(
                   alignment: Alignment.bottomRight,
                   children: [
-                    Image.asset(
-                      'map03.png',
-                      width: 500,
-                      height: 250,
-                    ),
+                  Image(
+                    image: AssetImage("assets/map03.png"),
+                        width: 500,
+                        height: 200,),
                     Padding(
                       padding: const EdgeInsets.only(right: 30),
                       child: GestureDetector(
@@ -399,7 +403,7 @@ class BottomSheetContent extends StatelessWidget {
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 4),
-                        width: 200,
+                        width: 150,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 2,
@@ -424,7 +428,7 @@ class BottomSheetContent extends StatelessWidget {
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 4),
-                        width: 200,
+                        width: 150,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 2,

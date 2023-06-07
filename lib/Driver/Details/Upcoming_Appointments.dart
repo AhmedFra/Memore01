@@ -58,13 +58,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                         Expanded(
-                        child: Image.asset(
-                          'eaamb.png',
-                          width: 80,
-                          height: 80,
-                        ),
-                      ),
+                        Expanded(
+                        child: Image(
+                        image: AssetImage("assets/eaamb.png"),
+                         width: 80,
+                        height: 80,) ),
                         ],
                       ),
                     ),
@@ -97,6 +95,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                         ),
                         SizedBox(height: 7),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'specialInstructions: Bring wheelchair',
@@ -202,11 +201,10 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           Stack(
                           alignment: Alignment.bottomRight,
                           children: [
-                            Image.asset(
-                            'map03.png',
-                             width: 500,
-                             height: 250,
-                               ),
+                            Image(
+                    image: AssetImage("assets/map03.png"),
+                        width: 500,
+                        height: 200,),
                                Padding(
                                padding: const EdgeInsets.only(right: 30),
                                 child: GestureDetector(
@@ -241,7 +239,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 4),
-                  width: 200,
+                  width: 150,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 2,
@@ -266,7 +264,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 4),
-                  width: 200,
+                  width: 150,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 2,
