@@ -113,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
               child: Container(
+                height: 180,
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(12)
@@ -122,11 +123,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: [
                     Expanded(
-                      child: Image.asset(
-                        'save.png',
-                        width: 200,
-                        height: 200,
-                      ),
+                      child: Image(image: AssetImage("assets/men.png"),width: 200,
+                        height: 200,)
+                        
+                        
                     ),
                     SizedBox(width: 12),
                     Expanded(
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               
                             ),
                           ),
-                          SizedBox(height: 16),
+                          SizedBox(height: 10),
                           ElevatedButton(
                             child: Text(
                               'Find a specialist',
@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.black),),
             ),
             Container(
-              margin: EdgeInsets.only(top:10,left: 20),
+              margin: EdgeInsets.only(left: 20),
               child:
                DatePicker(
                  DateTime.now(),
@@ -223,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                )),
              ListView.builder(
               shrinkWrap: true,
-              itemCount: 8,
+              itemCount: 3,
               itemBuilder: (context, index) {
                 return Padding( 
                   padding:EdgeInsets.symmetric(horizontal: 5, vertical: 10),
@@ -287,6 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ),
+            
           ],
         ),
       ),

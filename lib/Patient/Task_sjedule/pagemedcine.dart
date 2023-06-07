@@ -54,8 +54,8 @@ class _AddpageState extends State<Addpage> {
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: Colors.black)),
-              Muinput(title:"Title" ,hint:"Enter your title " ,controller: _titleController,),
-              Muinput(title:"Note" ,hint:"Enter your note " ,controller: _noteController,),
+              Muinput(title:"Medcine" ,hint:"Enter your title " ,controller: _titleController,),
+              Muinput(title:"Program" ,hint:"Enter your note " ,controller: _noteController,),
               Muinput(title:"Date" ,hint:DateFormat.yMd().format(_selectedDate),
               widget:
                IconButton(
@@ -172,14 +172,12 @@ class _AddpageState extends State<Addpage> {
       elevation: 0,
       title: Row(
         children: [
-          GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: const Icon(
-              Icons.arrow_back,
-              size: 30,
-              color: Colors.black,
-            ),
-          ),
+          IconButton(
+                  icon: Icon(Icons.arrow_back,color: Color.fromARGB(255, 0, 0, 0),size: 30,),
+                  onPressed: () {
+                    Navigator.pop(context); // Go back to the previous page
+                  },
+                ),
           
         ],
       ),

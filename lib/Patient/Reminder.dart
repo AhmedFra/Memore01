@@ -123,7 +123,7 @@ class _RemindersState extends State<Reminders> {
               SizedBox(height: 10,),
               _addCalender(),
               _addMycalender(),
-              SizedBox(height: 20,),
+              
               Expanded(
                 child: ListView.builder(
                 itemCount: 2,
@@ -225,125 +225,127 @@ Widget buildAppointmentContainer(BuildContext context) {
         _showBottomSheet2();
   },
       child: Container(
-        margin: EdgeInsets.only(top: 10, left: 20,right: 20),
-        height: 130,
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 240, 240, 240),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: Colors.grey.shade300,
-            width: 1.0,
-          ),
-        ),
-        child: Stack(
-          alignment: Alignment.topRight,
-          children: [
-            Positioned(
-              top: 15,
-              right: 15,
-              child:  Expanded(
-                        child: Image.asset(
-                          'capsule22.png',
-                          width: 24,
-                          height: 24,
-                        ),
-                      ),
-            ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 38),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Omega 3',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 4.0),
-                    Text(
-                      '1 capsule | 300mg',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    SizedBox(height: 12.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 124,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(7),
-                            border: Border.all(
-                            color: Colors.red,
-                             width: 2.0,
-                             ),  
-                            color: Color.fromARGB(255, 250, 148, 130),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Before Eating',
-                              style: TextStyle(fontSize: 16,color: Color.fromARGB(255, 250, 82, 69)),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 15),
-                        Container(
-                          width: 124,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(7),
-                            color: Color.fromARGB(255, 206, 205, 205),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Breakfast',
-                              style: TextStyle(fontSize: 16,color: Color.fromARGB(255, 139, 136, 136)),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 15),
-                        Expanded(
-                          child: Container(
-                            width: 124,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(7),
-                              color: Color.fromARGB(255, 101, 185, 253),
-                            ),
-                            child: GestureDetector(
-                              onTap: () {
-                                  showModalBottomSheet(
-                              context: context,
-                             builder: (context) {
-                              return buildBottomSheetContent();
-                                    },
-                                   );
-                                    },
-                              child: Center(
-                                child: Text(
-                                  'View Details',
-                                  style: TextStyle(fontSize: 16,color: Colors.black),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+  margin: EdgeInsets.only(top: 10, left: 20, right: 20),
+  height: 130,
+  decoration: BoxDecoration(
+    color: Color.fromARGB(255, 240, 240, 240),
+    borderRadius: BorderRadius.circular(12),
+    border: Border.all(
+      color: Colors.grey.shade300,
+      width: 1.0,
+    ),
+  ),
+  child: Stack(
+    alignment: Alignment.topRight,
+    children: [
+      Positioned(
+        top: 15,
+        right: 15,
+        child: Image(
+          image: AssetImage("assets/capsule22.png"),
+          width: 24,
+          height: 24,
         ),
       ),
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 38),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Omega 3',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 4.0),
+              Text(
+                '1 capsule | 300mg',
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.grey,
+                ),
+              ),
+              SizedBox(height: 12.0),
+              Row(
+                children: [
+                  Container(
+                    width: 100,  // Adjust the width as needed
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      border: Border.all(
+                        color: Colors.red,
+                        width: 2.0,
+                      ),
+                      color: Color.fromARGB(255, 250, 148, 130),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Before Eating',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 250, 82, 69),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Container(
+                    width: 80,  // Adjust the width as needed
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      color: Color.fromARGB(255, 206, 205, 205),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Breakfast',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 139, 136, 136),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Container(
+                      height: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Color.fromARGB(255, 101, 185, 253),
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return buildBottomSheetContent();
+                            },
+                          );
+                        },
+                        child: Center(
+                          child: Text(
+                            'View Details',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+),
     );
   
   }
@@ -354,7 +356,7 @@ Widget buildAppointmentContainer(BuildContext context) {
 
 Widget buildBottomSheetContent() {
     return Container(
-      height: 300,
+      height: 280,
       child: Column(
         children: [
           // Add your bottom sheet content here
@@ -427,11 +429,11 @@ Widget buildBottomSheetContent() {
               SizedBox(width: 10,),
               
                       Expanded(
-                        child: Image.asset(
-                          'Omega323.png',
-                          width: 200,
+                        child: Image(
+          image: AssetImage("assets/Omega323.png"),
+                          width: 400,
                           height: 200,
-                        ),
+        ),
                       ),
             ],
           ),
@@ -474,15 +476,14 @@ Widget buildBottomSheetContent() {
 
 
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  @override
-  Size get preferredSize => const Size.fromHeight(70);
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
-      height: preferredSize.height,
+      padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+      height: 110,
       width: double.infinity,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -500,24 +501,38 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           end: Alignment.bottomCenter,
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
         children: [
-          Text(
-            'Medicine Reminder',
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1,
-              fontSize: 24.0,
-            ),
-          ),
-          // Add any other widgets or icons here
+           Row(
+            
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              
+
+              
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                'Medicine Reminder',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1,
+                  fontSize: 24.0,
+                ),
+              ),
+                ],
+              ),
+          const SizedBox(height: 12),
         ],
       ),
+        ])
     );
   }
 }
+
   
 class CustomDialog extends StatelessWidget {
   @override
